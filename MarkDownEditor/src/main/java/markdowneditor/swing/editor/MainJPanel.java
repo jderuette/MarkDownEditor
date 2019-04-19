@@ -9,14 +9,11 @@ import javax.swing.JPanel;
  *
  */
 public class MainJPanel extends JPanel {
-    /**
-     * TODO.
-     */
+    /** serialVersionUID. */
     private static final long serialVersionUID = -5361829940344666623L;
 
     /**
      * TODO.
-     *
      * @param editor TODO
      */
     public MainJPanel(final Editor editor) {
@@ -27,5 +24,6 @@ public class MainJPanel extends JPanel {
         this.setLayout(new BorderLayout());
         this.add(fileSelectorMenu, BorderLayout.NORTH);
         this.add(markdownJPanel, BorderLayout.CENTER);
+        //TODO tata by Djer |Evol| Affiche le nom du fichier actuellement édité dans le SOUTH ? 
     }
 }

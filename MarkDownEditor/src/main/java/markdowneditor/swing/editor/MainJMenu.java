@@ -64,9 +64,11 @@ public class MainJMenu extends JMenuBar implements ActionListener {
 
         switch (source) {
         case "New":
+            //TODO Tat by Djer |POO| pas de SysSout sur un serveur ! Utilise une LOG
             System.out.println("new");
             break;
         case "Open":
+            //TODO Tat by Djer |POO| pas de SysSout sur un serveur ! Utilise une LOG
             System.out.println("open");
             // Create an object of JFileChooser class
             JFileChooser fileChooser = new JFileChooser();
@@ -76,6 +78,8 @@ public class MainJMenu extends JMenuBar implements ActionListener {
             if (filChoosen == JFileChooser.APPROVE_OPTION) {
                 // Set the label to the path of the selected directory
                 File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
+                //TODO Tat by Djer |POO| Tu aurais intéret à créer un DTO pour stocker la structure d'un "JBake document" (Header et content)
+                //TODO Tat by Djer |POO| Tu pourrais avoir un service responsable d'interpreter un "file" (ou équivalent) et de le transformer en DTO "facilement" manipulable par le Swing
                 String separator = "~~~~~~";
                 Boolean swap = true;
 
@@ -114,9 +118,11 @@ public class MainJMenu extends JMenuBar implements ActionListener {
             }
             break;
         case "Save":
+          //TODO Tat by Djer |POO| pas de SysSout sur un serveur ! Utilise une LOG
             System.out.println("save");
             break;
         default:
+          //TODO Tat by Djer |POO| pas de SysSout sur un serveur ! Utilise une LOG
             System.out.println("no match");
         }
     }

@@ -12,7 +12,7 @@ import javax.swing.JPanel;
  *
  */
 public class MarkdownJPanel extends JPanel implements KeyListener {
-    /** TODO. */
+    /** serialVersionUID. */
     private static final long serialVersionUID = 2213277497364439982L;
     /** TODO. */
     private TextEditor textEditor;
@@ -22,8 +22,8 @@ public class MarkdownJPanel extends JPanel implements KeyListener {
     private Preview preview;
 
     /**
-     * TODO.
      *
+     * TODO.
      * @param editor TODO
      */
     public MarkdownJPanel(final Editor editor) {

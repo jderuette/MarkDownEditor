@@ -11,7 +11,7 @@ import com.vladsch.flexmark.util.options.MutableDataSet;
  *
  */
 public class Preview extends JEditorPane {
-    /** TODO. */
+    /** serialVersionUID. */
     private static final long serialVersionUID = -8924868132574681604L;
     /** TODO. */
     private static Parser parser;
@@ -28,12 +28,13 @@ public class Preview extends JEditorPane {
 
     /**
      * TODO.
-     *
      * @param text TODO
      */
     public void convert(final String text) {
         String print = renderer.render(parser.parse(text));
         this.setText(print);
+        //TODO Tat by Djer |POO| pas de SysSout sur un serveur ! Utilise une LOG
         System.out.println(print);
+        //TODO Tat by Djer |Evol| Pour limiter la charge server (sera surement executer sur un "petit ordi pas très puissant", est-ce possible de faire le "refresh" MAX 1 fois par seconde ? 
     }
 }
