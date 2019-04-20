@@ -1,28 +1,26 @@
 package markdowneditor.swing.editor;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JPanel;
+import javax.swing.JTextPane;
 
 /**
- * @author Thomas TAVERNIER
  *
+ * @author Thomas TAVERNIER
  */
-public class FileSelectorMenu extends JPanel implements ActionListener {
-    /** serialVersionUID.*/
+public class FileSelectorMenu extends JPanel {
+    /** serialVersionUID. */
     private static final long serialVersionUID = -3037509437113168210L;
 
     /**
-     * TODO.
+     * FileSelectorMenu constructor.
+     *
+     * @param editoInstance set editor instance
      */
-    public FileSelectorMenu() {
-
+    public FileSelectorMenu(final Editor editoInstance) {
+        this.add(editoInstance.getFileNameInsatnce());
+        JTextPane fileExtensionPane = new JTextPane();
+        fileExtensionPane.setText(".md");
+        fileExtensionPane.setEditable(false);
+        this.add(fileExtensionPane);
     }
-
-    @Override
-    public void actionPerformed(final ActionEvent event) {
-        // TODO Auto-generated method stub
-    }
-
 }

@@ -1,25 +1,38 @@
 package markdowneditor.swing.editor;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JEditorPane;
+import javax.swing.Timer;
 
 import com.vladsch.flexmark.html.HtmlRenderer;
 import com.vladsch.flexmark.parser.Parser;
 import com.vladsch.flexmark.util.options.MutableDataSet;
 
 /**
- * @author Thomas TAVERNIER
  *
+ * @author Thomas TAVERNIER
  */
-public class Preview extends JEditorPane {
+public class Preview extends JEditorPane implements ActionListener {
     /** serialVersionUID. */
     private static final long serialVersionUID = -8924868132574681604L;
-    /** TODO. */
+    /** Initialize parser. */
     private static Parser parser;
-    /** TODO. */
+    /** Initialize renderer. */
     private static HtmlRenderer renderer;
+    /** Initialize text. */
+    private String text;
+    /** Initialize timer. */
+    private Timer timer;
+    /** Initialize WAIT. */
+    private static final Integer WAIT = 1000;
 
-    /** TODO. */
+    /**
+     * Preview constructor.
+     */
     public Preview() {
+        this.timer = new Timer(WAIT, this);
         this.setContentType("text/html");
         MutableDataSet options = new MutableDataSet();
         parser = Parser.builder(options).build();
@@ -27,14 +40,24 @@ public class Preview extends JEditorPane {
     }
 
     /**
-     * TODO.
-     * @param text TODO
+     * @param textSet set text
      */
-    public void convert(final String text) {
+    public void convert(final String textSet) {
+        this.text = textSet;
+        timer.start();
+    }
+
+    /**
+     * render the MarkDown in HTML.
+     */
+    public void render() {
         String print = renderer.render(parser.parse(text));
         this.setText(print);
-        //TODO Tat by Djer |POO| pas de SysSout sur un serveur ! Utilise une LOG
-        System.out.println(print);
-        //TODO Tat by Djer |Evol| Pour limiter la charge server (sera surement executer sur un "petit ordi pas très puissant", est-ce possible de faire le "refresh" MAX 1 fois par seconde ? 
+    }
+
+    @Override
+    public final void actionPerformed(final ActionEvent event) {
+        timer.stop();
+        render();
     }
 }

@@ -3,6 +3,7 @@ package markdowneditor.swing.editor;
 import java.awt.Color;
 
 import javax.swing.BorderFactory;
+import javax.swing.JTextPane;
 import javax.swing.border.Border;
 
 /**
@@ -10,44 +11,56 @@ import javax.swing.border.Border;
  * @author Thomas TAVERNIER
  */
 public class Editor {
-    /** TODO. */
-    private HeaderEditor headerEditorInstance;
-    /** TODO. */
-    private TextEditor textEditorInstance;
-    /** TODO. */
-    private Preview preview;
+    /** Initialize headerEditorInstance. */
+    private HeaderEditor headerInstance;
+    /** Initialize textEditorInstance. */
+    private TextEditor contentInstance;
+    /** Initialize previewInstance. */
+    private Preview previewInstance;
+    /** Initialize fileName. */
+    private JTextPane fileNamePaneInstance;
 
-    /** TODO. */
+    /**
+     * Editor constructor.
+     */
     public Editor() {
         Border border = BorderFactory.createLineBorder(Color.black, 1);
 
-        this.headerEditorInstance = new HeaderEditor();
-        this.textEditorInstance = new TextEditor();
-        this.preview = new Preview();
+        this.headerInstance = new HeaderEditor();
+        this.contentInstance = new TextEditor();
+        this.previewInstance = new Preview();
+        this.fileNamePaneInstance = new JTextPane();
 
-        this.headerEditorInstance.setBorder(border);
-        this.textEditorInstance.setBorder(border);
-        this.preview.setBorder(border);
+        this.headerInstance.setBorder(border);
+        this.contentInstance.setBorder(border);
+        this.previewInstance.setBorder(border);
     }
 
     /**
-     * @return TODO
+     * @return instance of header
      */
     public final HeaderEditor getHeaderEditorInstance() {
-        return headerEditorInstance;
+        return headerInstance;
     }
 
     /**
-     * @return TODO
+     * @return instance of content
      */
-    public final TextEditor getTextEditorInstance() {
-        return textEditorInstance;
+    public final TextEditor getContentEditorInstance() {
+        return contentInstance;
     }
 
     /**
-     * @return TODO
+     * @return instance of preview
      */
     public final Preview getPreviewInsatnce() {
-        return preview;
+        return previewInstance;
+    }
+
+    /**
+     * @return instance of fileName
+     */
+    public final JTextPane getFileNameInsatnce() {
+        return fileNamePaneInstance;
     }
 }

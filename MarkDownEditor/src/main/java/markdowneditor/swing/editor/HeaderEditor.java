@@ -9,7 +9,9 @@ import javax.swing.JTextArea;
 public class HeaderEditor extends JTextArea {
     private static final long serialVersionUID = 4609138648351807051L;
 
-    /** TODO. */
+    /**
+     * HeaderEditor constructor.
+     */
     public HeaderEditor() {
         this.setLineWrap(true);
     }

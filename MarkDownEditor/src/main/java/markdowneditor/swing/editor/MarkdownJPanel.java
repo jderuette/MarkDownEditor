@@ -8,26 +8,26 @@ import java.awt.event.KeyListener;
 import javax.swing.JPanel;
 
 /**
- * @author Thomas TODO.
  *
+ * @author Thomas TAVERNIER
  */
 public class MarkdownJPanel extends JPanel implements KeyListener {
     /** serialVersionUID. */
     private static final long serialVersionUID = 2213277497364439982L;
-    /** TODO. */
+    /** Initialize textEditor. */
     private TextEditor textEditor;
-    /** TODO. */
+    /** Initialize headerEditor. */
     private HeaderEditor headerEditor;
-    /** TODO. */
+    /** Initialize preview. */
     private Preview preview;
 
     /**
+     * MarkdownJPanel constructor.
      *
-     * TODO.
-     * @param editor TODO
+     * @param editor set editor instance
      */
     public MarkdownJPanel(final Editor editor) {
-        this.textEditor = editor.getTextEditorInstance();
+        this.textEditor = editor.getContentEditorInstance();
         this.headerEditor = editor.getHeaderEditorInstance();
         this.preview = editor.getPreviewInsatnce();
 

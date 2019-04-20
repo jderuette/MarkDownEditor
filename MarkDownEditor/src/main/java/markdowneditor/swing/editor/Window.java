@@ -1,31 +1,37 @@
 package markdowneditor.swing.editor;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 import javax.swing.JFrame;
 
 /**
- * @author Thomas TODO
+ *
+ * @author Thomas TAVERNIER
  */
 public class Window extends JFrame {
     /** serialVersionUID. */
     private static final long serialVersionUID = 5754128319161534792L;
-
-    /** TODO. */
-    private static final Integer SIZE = 500;
-
-    /** TODO. */
-    private Editor editor = new Editor();
+    /** Initialize SCRENNSIZE. */
+    private static final Dimension SCRENNSIZE = Toolkit.getDefaultToolkit().getScreenSize();
+    /** Initialize editor. */
+    private Editor editor;
+    /** Initialize toDTO. */
+    private Service toDTO;
 
     /**
-     * TODO.
+     * FileSelectorMenu constructor.
      */
     public Window() {
-        MainJMenu mainMenu = new MainJMenu(editor);
+        this.editor = new Editor();
+        this.toDTO = new Service(editor);
+        MainJMenu mainMenu = new MainJMenu(toDTO);
         this.setJMenuBar(mainMenu);
 
         MainJPanel mainPanel = new MainJPanel(editor);
         this.add(mainPanel);
-
-        this.setSize(SIZE, SIZE);
+//        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setSize(SCRENNSIZE.width / 2, SCRENNSIZE.height / 2);
         this.setLocationRelativeTo(null);
         this.setTitle("MarkDown Editor");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

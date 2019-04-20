@@ -11,7 +11,7 @@ public class TextEditor extends JTextArea {
     private static final long serialVersionUID = 3543067034994664255L;
 
     /**
-     * TODO.
+     * TextEditor constructor.
      */
     public TextEditor() {
         this.setLineWrap(true);
