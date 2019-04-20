@@ -6,7 +6,7 @@ import javax.swing.JFrame;
  * @author Thomas TODO
  */
 public class Window extends JFrame {
-    /** TODO. */
+    /** serialVersionUID. */
     private static final long serialVersionUID = 5754128319161534792L;
 
     /** TODO. */

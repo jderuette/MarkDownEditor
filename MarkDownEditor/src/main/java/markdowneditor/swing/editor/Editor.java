@@ -6,8 +6,8 @@ import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 
 /**
- * @author Thomas TAVERNIER
  *
+ * @author Thomas TAVERNIER
  */
 public class Editor {
     /** TODO. */

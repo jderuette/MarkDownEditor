@@ -10,9 +10,7 @@ import javax.swing.JPanel;
  *
  */
 public class FileSelectorMenu extends JPanel implements ActionListener {
-    /**
-     * TODO.
-     */
+    /** serialVersionUID.*/
     private static final long serialVersionUID = -3037509437113168210L;
 
     /**
@@ -25,7 +23,6 @@ public class FileSelectorMenu extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(final ActionEvent event) {
         // TODO Auto-generated method stub
-
     }
 
 }
