@@ -10,7 +10,10 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import markdowneditor.swing.service.Manager;
+
 /**
+ * JMenuBar.
  *
  * @author Thomas TAVERNIER
  */
@@ -18,17 +21,17 @@ public class MainJMenu extends JMenuBar implements ActionListener {
     /** serialVersionUID. */
     private static final long serialVersionUID = 8454523963742057316L;
     /** Initialize serviceInstance. */
-    private Service serviceInstance;
+    private Manager manager;
     /** Initialize fileChooser. */
     private JFileChooser fileChooser;
 
     /**
      * /** FileSelectorMenu constructor.
      *
-     * @param service set toDTO instance
+     * @param managerInstance set toDTO instance
      */
-    public MainJMenu(final Service service) {
-        this.serviceInstance = service;
+    public MainJMenu(final Manager managerInstance) {
+        this.manager = managerInstance;
         // Create an object of JFileChooser class
         this.fileChooser = new JFileChooser();
         this.fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("MarkDown", "md"));
@@ -72,24 +75,30 @@ public class MainJMenu extends JMenuBar implements ActionListener {
         String source = event.getActionCommand();
         switch (source) {
         case "New":
+            fileChooser.setDialogTitle("New file");
             if (checkIfAFileIsChosen()) {
-                serviceInstance.createFile(fileChooser);
-                serviceInstance.convert(fileChooser);
-                serviceInstance.write();
-            } else {
-                JOptionPane.showMessageDialog(this, "the user cancelled the operation");
+                if (!manager.checkIfFileExist(fileChooser)) {
+                    manager.createFile(fileChooser);
+                    manager.convert(fileChooser);
+                    manager.write();
+                    JOptionPane.showMessageDialog(this,
+                            "The file \"" + manager.getFileName() + "\" has been correctly created in \""
+                                    + manager.getFilePath() + "\"",
+                            "file created", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, "The file already exist", "error", JOptionPane.ERROR_MESSAGE);
+                }
             }
             break;
         case "Open":
+            fileChooser.setDialogTitle("Open");
             if (checkIfAFileIsChosen()) {
-                serviceInstance.convert(fileChooser);
-                serviceInstance.write();
-            } else {
-                JOptionPane.showMessageDialog(this, "the user cancelled the operation");
+                manager.convert(fileChooser);
+                manager.write();
             }
             break;
         case "Save":
-            serviceInstance.save();
+            manager.save();
             break;
         default:
             break;

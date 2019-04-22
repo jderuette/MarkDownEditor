@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
 /**
+ * File Selector Menu, it currently only allows to change file name.
  *
  * @author Thomas TAVERNIER
  */

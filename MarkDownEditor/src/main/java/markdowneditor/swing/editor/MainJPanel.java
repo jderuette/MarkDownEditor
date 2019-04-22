@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
 /**
+ * Main Jpanel, contains the file selector menu and the markdown panel.
  *
  * @author Thomas TAVERNIER
  */

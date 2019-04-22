@@ -1,4 +1,5 @@
 /**
+ * Main package contains main method.
  *
  * @author Thomas TAVERNIER
  */

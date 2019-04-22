@@ -3,6 +3,7 @@ package markdowneditor.swing;
 import markdowneditor.swing.editor.Window;
 
 /**
+ * main, starting point.
  *
  * @author Thomas TAVERNIER
  */

@@ -3,6 +3,7 @@ package markdowneditor.swing.editor;
 import javax.swing.JTextArea;
 
 /**
+ * Content JTextArea.
  *
  * @author Thomas TAVERNIER
  */
@@ -15,5 +16,6 @@ public class TextEditor extends JTextArea {
      */
     public TextEditor() {
         this.setLineWrap(true);
+        this.setEditable(false);
     }
 }

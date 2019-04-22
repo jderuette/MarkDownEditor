@@ -5,7 +5,10 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
+import markdowneditor.swing.service.Manager;
+
 /**
+ * Main JFrame.
  *
  * @author Thomas TAVERNIER
  */
@@ -17,20 +20,19 @@ public class Window extends JFrame {
     /** Initialize editor. */
     private Editor editor;
     /** Initialize toDTO. */
-    private Service toDTO;
+    private Manager manager;
 
     /**
      * FileSelectorMenu constructor.
      */
     public Window() {
         this.editor = new Editor();
-        this.toDTO = new Service(editor);
-        MainJMenu mainMenu = new MainJMenu(toDTO);
+        this.manager = new Manager(editor);
+        MainJMenu mainMenu = new MainJMenu(manager);
         this.setJMenuBar(mainMenu);
 
         MainJPanel mainPanel = new MainJPanel(editor);
         this.add(mainPanel);
-//        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setSize(SCRENNSIZE.width / 2, SCRENNSIZE.height / 2);
         this.setLocationRelativeTo(null);
         this.setTitle("MarkDown Editor");

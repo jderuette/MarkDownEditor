@@ -8,6 +8,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JPanel;
 
 /**
+ * Contains the hearder editor, the content editor and the preview.
  *
  * @author Thomas TAVERNIER
  */

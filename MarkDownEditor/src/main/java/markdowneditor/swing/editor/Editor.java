@@ -7,6 +7,7 @@ import javax.swing.JTextPane;
 import javax.swing.border.Border;
 
 /**
+ * Contains all editable instance.
  *
  * @author Thomas TAVERNIER
  */

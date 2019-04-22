@@ -1,4 +1,5 @@
 /**
+ * Window package.
  *
  * @author Thomas TAVERNIER
  */

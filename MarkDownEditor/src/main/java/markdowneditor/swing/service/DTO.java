@@ -1,8 +1,9 @@
-package markdowneditor.swing.editor;
+package markdowneditor.swing.service;
 
 import java.io.Serializable;
 
 /**
+ * MarkDown structure.
  *
  * @author Thomas TAVERNIER
  */
